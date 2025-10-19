@@ -844,11 +844,17 @@ async def root():
 
 if __name__ == "__main__":
     import uvicorn
-    
-    # Load dataset on startup
-    logger.info("Loading furniture dataset...")
-    dataset = load_furniture_dataset()
-    logger.info(f"Dataset loaded with {len(dataset)} products")
-    
-    # Start server
-    uvicorn.run(app, host="0.0.0.0", port=8001, log_level="info")
+    import os
+
+    # Load dataset
+    try:
+        logger.info("Loading furniture dataset...")
+        dataset = load_furniture_dataset()
+        logger.info(f"Dataset loaded with {len(dataset)} products")
+    except Exception as e:
+        logger.exception("Failed to load dataset")
+
+    # Start server on Render-provided port
+    port = int(os.environ.get("PORT", 8000))
+    logger.info(f"Starting server on 0.0.0.0:{port}")
+    uvicorn.run(app, host="0.0.0.0", port=port, log_level="info")
