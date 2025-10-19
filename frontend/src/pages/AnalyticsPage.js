@@ -38,7 +38,9 @@ const AnalyticsPage = () => {
   const fetchAnalyticsData = async () => {
     try {
       setIsLoading(true);
-      const response = await fetch('http://localhost:8001/api/analytics');
+      const API_URL = process.env.REACT_APP_API_URL;
+      const response = await fetch(`${API_URL}/api/analytics`);
+
       
       if (!response.ok) {
         throw new Error(`Failed to fetch analytics: ${response.status}`);
