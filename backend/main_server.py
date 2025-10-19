@@ -843,8 +843,8 @@ async def root():
     }
 
 if __name__ == "__main__":
-    import uvicorn
     import os
+    import uvicorn
 
     # Load dataset
     try:
@@ -858,3 +858,4 @@ if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8000))
     logger.info(f"Starting server on 0.0.0.0:{port}")
     uvicorn.run(app, host="0.0.0.0", port=port, log_level="info")
+
