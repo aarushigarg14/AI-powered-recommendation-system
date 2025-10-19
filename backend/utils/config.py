@@ -46,7 +46,7 @@ class Settings:
         
         # Model settings
         self.embedding_model: str = os.getenv("EMBEDDING_MODEL", "sentence-transformers/all-MiniLM-L6-v2")
-        self.genai_model: str = os.getenv("GENAI_MODEL", "google/flan-t5-small")
+        self.genai_model: str = os.getenv("GENAI_MODEL", "google/flan-t5-nano")
         self.max_results: int = int(os.getenv("MAX_RESULTS", "20"))
         self.embedding_dimension: int = int(os.getenv("EMBEDDING_DIMENSION", "384"))
         
