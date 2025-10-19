@@ -128,7 +128,7 @@ const AnalyticsPage = () => {
     summary: {
       totalProducts: 312,
       totalCategories: 25,
-      averagePrice: 287.50,
+      averagePrice: 67.50,
       totalRevenue: 89750.25,
       activeUsers: 1247,
       conversionRate: 3.2
@@ -142,19 +142,23 @@ const AnalyticsPage = () => {
       { category: 'Outdoor', products: 34, percentage: 11 }
     ],
     priceRanges: [
-      { range: '$0-100', count: 87, percentage: 28 },
-      { range: '$100-300', count: 112, percentage: 36 },
-      { range: '$300-500', count: 76, percentage: 24 },
-      { range: '$500-1000', count: 28, percentage: 9 },
-      { range: '$1000+', count: 9, percentage: 3 }
+      { range: '$0-50', count: 147, percentage: 47 },
+      { range: '$50-100', count: 103, percentage: 33 },
+      { range: '$100-200', count: 47, percentage: 15 },
+      { range: '$200-500', count: 12, percentage: 4 },
+      { range: '$500+', count: 0, percentage: 0 }
     ],
     materialData: [
-      { material: 'Wood', count: 89, color: '#8B4513' },
-      { material: 'Metal', count: 67, color: '#708090' },
-      { material: 'Fabric', count: 54, color: '#4682B4' },
-      { material: 'Leather', count: 43, color: '#A0522D' },
-      { material: 'Plastic', count: 32, color: '#32CD32' },
-      { material: 'Glass', count: 27, color: '#87CEEB' }
+      { material: 'Wood', count: 32, color: '#8B4513' },
+      { material: 'Engineering Wood', count: 25, color: '#708090' },
+      { material: 'Metal', count: 15, color: '#4682B4' },
+      { material: 'Rubber', count: 15, color: '#A0522D' },
+      { material: 'Foam', count: 12, color: '#A0522D' },
+      { material: 'Iron', count: 8, color: '#32CD32' },
+      { material: 'Brass', count: 7, color: '#8B4513' },
+      { material: 'Sponge', count: 5, color: '#8B4513' },
+      { material: 'Plastic', count: 5, color: '#8B4513' },
+      { material: 'Stainless steel', count: 5, color: '#87CEEB' }
     ],
     topBrands: [
       { brand: 'ModernHome', sales: 45 },
