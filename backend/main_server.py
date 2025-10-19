@@ -15,6 +15,7 @@ import re
 import ast
 import os
 import random
+import uvicorn
 from pathlib import Path
 from datetime import datetime
 from collections import Counter
@@ -842,11 +843,10 @@ async def root():
         "brands": "/api/brands"
     }
 
-if __name__ == "__main__":
-    import os
-    import uvicorn
+logger = logging.getLogger(__name__)
 
-    # Load dataset
+if __name__ == "__main__":
+    # Load dataset on startup
     try:
         logger.info("Loading furniture dataset...")
         dataset = load_furniture_dataset()
@@ -854,8 +854,10 @@ if __name__ == "__main__":
     except Exception as e:
         logger.exception("Failed to load dataset")
 
-    # Start server on Render-provided port
+    # Use Render's dynamic port or default to 8000 locally
     port = int(os.environ.get("PORT", 8000))
     logger.info(f"Starting server on 0.0.0.0:{port}")
+
+    # Start FastAPI server
     uvicorn.run(app, host="0.0.0.0", port=port, log_level="info")
 
